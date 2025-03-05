@@ -1,0 +1,194 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #ffffff;
+    text-align: center;
+    background-image: url('foto/nissan-180.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    position: relative;
+    width: 100%;
+}
+
+/* Контейнер для меню */
+.menu-container {
+    position: fixed;
+    top: 15px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    z-index: 1001;
+}
+
+/* Иконка меню */
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+}
+
+/* Скрытое меню */
+nav {
+    position: fixed;
+    top: 50px;
+    left: 20px;
+    background: rgba(0, 0, 0, 0.9);
+    border-radius: 10px;
+    padding: 10px;
+    display: none;
+    z-index: 1000;
+    min-width: 150px;
+}
+
+/* Показываем меню, когда класс hidden удален */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    padding: 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #00bcd4;
+}
+
+/* Для отображения меню */
+#menu:not(.hidden) {
+    display: block;
+}
+
+/* Основной контент */
+.content {
+    font-family: IBM Plex;
+    font-weight: bold;
+    font-size: 20px; /* Размер текста */
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    max-width: 400px;
+    text-shadow: 2px 2px 0 black; /* Тонкое черное обведение */
+}
+
+/* Кнопки */
+button {
+    background-color: #008cba;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #005f73;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .menu-container {
+        left: 10px; /* Заміна right на left */
+    }
+
+    .menu-icon {
+        font-size: 20px;
+    }
+
+    nav {
+        left: 10px; /* Заміна right на left */
+        top: 45px;
+    }
+
+    .content {
+        width: 90%;
+        padding: 15px;
+    }
+}
+
+/* Загальні стилі для заголовків */
+h1 {
+    font-size: 24px;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 10px 0;
+    position: relative;
+}
+
+/* Анімація для зміни тексту */
+@keyframes changeText {
+    0% { content: "Гоночні авто Японії: історія швидкості"; }
+    25% { content: "JDM культура: легенди та технології"; }
+    50% { content: "Японські спорткари: швидкість та інновації"; }
+    75% { content: "Технології, що змінюють світ автомобілів"; }
+    100% { content: "Гоночні авто Японії: історія швидкості"; }
+}
+
+/* Застосовуємо анімацію до заголовка з псевдоелементами */
+#zagolovok::after {
+    content: "Гоночні авто Японії: історія швидкості"; /* Початковий текст */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    animation: changeText 200s infinite; /* Цикл зміни тексту кожні 50 секунд */
+}
+
+/* Блоки з боків */
+.side-text-left, .side-text-right {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 250px;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    font-size: 16px;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Лівий блок */
+.side-text-left {
+    left: 5px;
+}
+
+/* Правий блок */
+.side-text-right {
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    text-rendering: optimizeLegibility;
+    right: 5px;
+}
+
+/* Для мобільних пристроїв приховуємо бічні блоки */
+@media (max-width: 768px) {
+    .side-text-left, .side-text-right {
+        display: none;
+    }
+}

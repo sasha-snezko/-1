@@ -1,0 +1,121 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #ffffff;
+    text-align: center;
+    background-image: url('foto/nissan-180.webp'); /* Заміни на свою картинку */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+
+/* Чорна лінія із заголовком */
+header {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    position: relative;
+    width: 100%;
+    z-index: 1000; /* Переконайтеся, що заголовок поверх всіх елементів */
+}
+
+/* Контейнер для тексту всередині чорної лінії */
+.header-text-container {
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+/* Анімація для заголовка */
+@keyframes zagolovok2 {
+    0% { 
+        content: "Вибір автомобілю"; 
+    }
+    33% { 
+        content: "Вибір автомобілю"; 
+    }
+    66% { 
+        content: "Вибір автомобілю"; 
+    }
+    100% { 
+        content: "Вибір автомобілю"; 
+    }
+}
+
+h1::after {
+    content: "Вибір автомобілю";
+    animation: zagolovok2 50s infinite;
+    display: inline-block;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    z-index: 100;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Контейнер для меню та кнопки мови */
+.menu-container {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    z-index: 1001;
+}
+
+/* Значок меню */
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+}
+
+/* Стиль для галереї автомобілів */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px; /* Зменшуємо відстань між елементами */
+    justify-content: center;
+    padding: 30px 20px; /* Піднімаємо галерею вище */
+    margin-top: 150px; /* Робимо відступ зверху, щоб вона не перекривала інші елементи */
+}
+
+/* Елементи галереї */
+.item {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+/* Зменшити розмір зображень */
+.item img {
+    width: 155px; /* Зменшуємо зображення */
+    height: 155px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Зменшити розмір кнопок */
+.item button {
+    margin-top: 10px;
+    padding: 8px 15px;
+    background-color: #00bcd4;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.item button:hover {
+    background-color: #0097a7;
+}
+
